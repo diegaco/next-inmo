@@ -1,10 +1,10 @@
-import Head from "next/head"
-import { DrupalNode, getResourceCollectionFromContext } from "next-drupal"
-import { NodeArticleTeaser } from "@/components/node-article"
-import { GetStaticPropsResult } from "next"
+import Head from "next/head";
+import { DrupalNode, getResourceCollectionFromContext } from "next-drupal";
+import { NodeArticleTeaser } from "@/components/node-article";
+import { GetStaticPropsResult } from "next";
 
 interface IndexPageProps {
-  nodes: DrupalNode[]
+  nodes: DrupalNode[];
 }
 
 export default function IndexPage({ nodes }: IndexPageProps) {
@@ -32,7 +32,7 @@ export default function IndexPage({ nodes }: IndexPageProps) {
         )}
       </div>
     </>
-  )
+  );
 }
 
 export async function getStaticProps(
@@ -47,12 +47,12 @@ export async function getStaticProps(
         sort: "-created",
       },
     }
-  )
+  );
 
   return {
     props: {
       nodes,
     },
     revalidate: 10,
-  }
+  };
 }

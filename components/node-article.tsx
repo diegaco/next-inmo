@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import { formatDate } from "../lib/format-date"
+import { formatDate } from "../lib/format-date";
 
 export function NodeArticle({ node, ...props }) {
   return (
@@ -32,7 +32,7 @@ export function NodeArticle({ node, ...props }) {
         />
       )}
     </article>
-  )
+  );
 }
 
 export function NodeArticleTeaser({ node, ...props }) {
@@ -59,7 +59,7 @@ export function NodeArticleTeaser({ node, ...props }) {
         {node.body.summary}
       </p>
     </article>
-  )
+  );
 }
 
 function NodeMeta({ node, ...props }) {
@@ -73,5 +73,5 @@ function NodeMeta({ node, ...props }) {
       ) : null}
       <span> - {formatDate(node.created)}</span>
     </div>
-  )
+  );
 }
