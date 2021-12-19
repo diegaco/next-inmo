@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "drupal-jsonapi-params": "^1.2.2",
     "framer-motion": "^4.1.17",
     "next": "^11.1.2",
     "next-drupal": "^0.17.0",

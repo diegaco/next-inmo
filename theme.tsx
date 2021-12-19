@@ -14,7 +14,7 @@ export default extendTheme({
   },
   styles: {
     global: {
-      'html, body': {
+      'html, body, #__next': {
         height: '100%',
         // color: 'blue.900'
       },

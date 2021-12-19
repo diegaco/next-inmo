@@ -1,15 +1,17 @@
 import NextLink from "next/link";
-import { Box, Container, Image, Stack, Link } from '@chakra-ui/react'
-import { useMenu } from "next-drupal";
+import { Box, Container, Image, Stack, Link, Flex } from '@chakra-ui/react'
+import { getResource, useMenu } from "next-drupal";
 import { useRouter } from "next/dist/client/router";
+import Footer from "./footer";
+import { site } from '@/config';
 
 export function Layout({ children }) {
   const { asPath } = useRouter();
   const { tree } = useMenu("main");
 
   return (
-    <div className="max-w-screen-lg mx-auto px-6">
-      <Box as="header" py={4}>
+    <Flex flexDirection="column" height="100%">
+      <Box as="header" py={4} width="100%">
         <Container maxW="container.xl">
           <Stack direction="row" justifyContent="space-between">
             <NextLink href="/" passHref>
@@ -38,7 +40,8 @@ export function Layout({ children }) {
           </Stack>
         </Container>
       </Box>
-      <main className="container mx-auto py-10">{children}</main>
-    </div>
+      <Box as="main" className="main-content" width="100%">{children}</Box>
+      <Footer copyright={site.copyright}/>
+    </Flex>
   );
 }
